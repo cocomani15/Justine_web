@@ -1,0 +1,16 @@
+@model justine_webapp.Models.Type
+<div class="container-fluid">
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="post" class="form-horizontal form-material mx-2" >
+                                    <div class="form-group">
+                                        <label asp-for="Name" class="col-md-12 mb-0"></label>
+                                        <div class="col-md-12">
+                                            <input asp-for="Name" type="text"
+                                                class="form-control ps-0 form-control-line">
+                                                </div>
+                                                  <div class="col-sm-12 d-flex">
+                                            <input class="btn btn-success mx-auto mx-md-0 text-white" type="submit" value="Submit">
+                                                  </div>
+                                </form>

@@ -1,0 +1,52 @@
+@model IEnumerable<justine_webapp.Models.item>
+
+    <div class="pt-3">
+        @if(Model.Count() > 0)
+        {
+            <div class="container-fluid">
+                <div class="row">
+               <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Item</h4>
+                                <a class="btn btn-success text-white mt-4" asp-controller="Item" asp-action="newfile">Add New</a>
+                               
+                                <div class="table-responsive">
+                                    <table class="table user-table no-wrap">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Edit/Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                      <tr>
+                          <td>@item.Name</td>
+                          <td>
+                          <div class="btn-group" role="group">
+                              <a class="btn btn-success btn-secondary btn-sm">Edit</a>
+                          </div>
+                          <div class="btn-group" role="group">
+                              <a class="btn btn-danger btn-secondary btn-sm">Delete</a>
+                          </div>
+                          </td>
+                      </tr>  
+                      
+                    }
+                </tbody>
+            </table>
+             </div>
+            </div>
+            </div>
+         </div>
+         </div>
+      </div>
+        }
+        else
+        {
+            <p>No item Exist.</p>
+        }
+   
+                </div>

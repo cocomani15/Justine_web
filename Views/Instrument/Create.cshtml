@@ -1,0 +1,32 @@
+@model justine_webapp.Models.InstrumentViewModel
+<div class="mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2>New Type</h2>
+        </div>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Items"></label>
+            <select asp-for="instrument.ItemId" asp-items="Model.selectListItem(Model.Items)" class="form-control"></select>
+            <span asp-validation-for="instrument.ItemId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="types"></label>
+            <select asp-for="instrument.TypeId" asp-items="Model.selectListType(Model.types)" class="form-control"></select>
+            <span asp-validation-for="instrument.TypeId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="instrument.Price"></label>
+            <input asp-for="instrument.Price" type="text" class="form-control">
+            <span asp-validation-for="instrument.Price " class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="instrument.ImagePath"></label>
+            <input asp-for="instrument.ImagePath" type="file" name="files" class="form-control">
+           
+            </div>
+            <button type="Submit" class="btn btn-primary">Submit</button>
+            <a asp-action="Instrument" class="btn btn-success">Back</a>
+    </form>
+</div>
